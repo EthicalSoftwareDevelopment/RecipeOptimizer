@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catering.Console", "Catering.Console\Catering.Console.csproj", "{954FACC6-9739-4E25-938C-E11402FF8CC9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catering.Domain", "Catering.Domain\Catering.Domain.csproj", "{473AF677-E67D-4D47-9B48-A71254E4A997}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catering.WebApi", "Catering.WebApi\Catering.WebApi.csproj", "{1C1E3D47-02DD-4018-8FC1-27DF7E175C25}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{954FACC6-9739-4E25-938C-E11402FF8CC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{954FACC6-9739-4E25-938C-E11402FF8CC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{954FACC6-9739-4E25-938C-E11402FF8CC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{473AF677-E67D-4D47-9B48-A71254E4A997}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{473AF677-E67D-4D47-9B48-A71254E4A997}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{473AF677-E67D-4D47-9B48-A71254E4A997}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{473AF677-E67D-4D47-9B48-A71254E4A997}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C1E3D47-02DD-4018-8FC1-27DF7E175C25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C1E3D47-02DD-4018-8FC1-27DF7E175C25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C1E3D47-02DD-4018-8FC1-27DF7E175C25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C1E3D47-02DD-4018-8FC1-27DF7E175C25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

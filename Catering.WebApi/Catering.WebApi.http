@@ -1,0 +1,9 @@
+@HostAddress = http://localhost:5179
+
+GET {{HostAddress}}/catering/GetARandomSetMenu/
+Accept: application/json
+
+GET {{HostAddress}}/catering/GetBestCombination/
+Accept: application/json
+
+###

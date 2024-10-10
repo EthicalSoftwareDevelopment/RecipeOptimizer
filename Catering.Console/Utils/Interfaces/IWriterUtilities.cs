@@ -1,6 +1,12 @@
-namespace Catering.Domain.Utils;
+using Catering.Domain.DomainModels;
+using Catering.Domain.DomainModels.Ingredients;
 
-public interface IWriterUtilities
+namespace Catering.Console.Utils.Interfaces
 {
-    public v
+    public interface IWriterUtilities
+    {
+        public void WriteIngredients(List<KeyValuePair<Ingredient, int>> ingredients);
+
+        public void WriteSetMenu(SetMenu bestCookingOption);
+    }
 }

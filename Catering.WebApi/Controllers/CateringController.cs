@@ -1,32 +1,45 @@
+using Catering.Domain.DomainModels;
+using Catering.Domain.DomainModels.Ingredients;
+using Catering.Domain.DomainModels.Vegan;
+using Catering.Domain.Utils;
+using Catering.WebApi.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Catering.WebApi.Controllers;
-
-[ApiController]
-[Route("[controller]")]
-public class WeatherForecastController : ControllerBase
+namespace Catering.WebApi.Controllers
 {
-    private static readonly string[] Summaries = new[]
-    {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
 
-    private readonly ILogger<WeatherForecastController> _logger;
-
-    public WeatherForecastController(ILogger<WeatherForecastController> logger)
+    [ApiController]
+    [Route("[controller]/[action]")]
+    public class CateringController : ControllerBase
     {
-        _logger = logger;
-    }
+        private List<KeyValuePair<Ingredient, int>> _availableIngredients;
+        private IKitchenUtilities _kitchenUtilities;
+        private ICookingService _cookingService;
+        
+        private readonly ILogger<CateringController> _logger;
 
-    [HttpGet(Name = "GetWeatherForecast")]
-    public IEnumerable<WeatherForecast> Get()
-    {
-        return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+        public CateringController(ILogger<CateringController> logger, IKitchenUtilities kitchenUtilities, ICookingService cookingService)
+        {
+            _logger = logger;
+            this._kitchenUtilities = kitchenUtilities;
+            this._availableIngredients = kitchenUtilities.GetDefaultIngredientList();
+            this._cookingService = cookingService;
+        }
+
+        [HttpGet(Name = "GetARandomSetMenu")]
+        public JsonResult GetARandomSetMenu()
+        {
+            var setMenu = _kitchenUtilities.GetARandomSetMenu(3);
+
+            return new JsonResult(setMenu);
+        }
+
+        [HttpGet(Name = "GetBestCombination")]
+        public JsonResult GetBestCombination()
+        {
+            var bestMenuOption = _cookingService.CalculateBestOption(this._availableIngredients);
+
+            return new JsonResult(bestMenuOption);
+        }
     }
 }
