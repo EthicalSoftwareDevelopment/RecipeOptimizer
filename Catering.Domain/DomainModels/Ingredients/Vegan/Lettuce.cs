@@ -1,6 +1,12 @@
-namespace Catering.Domain.DomainModels.Vegan;
+using Catering.Domain.DomainModels.Ingredients;
 
-public class Lettuce : Ingredient
+namespace Catering.Domain.DomainModels.Vegan
 {
-    
+    public class Lettuce : Ingredient
+    {
+        public Lettuce() : base(FoodName.Lettuce, FoodType.Vegetable)
+        {
+
+        }
+    }
 }

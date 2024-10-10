@@ -1,10 +1,13 @@
-namespace Catering.Domain.DomainModels;
+using Catering.Domain.DomainModels.Enums;
+
+namespace Catering.Domain.DomainModels.Ingredients;
 
 public class Ingredient
 {
     #region Properties
     
-    public string Name { get; set; }
+    public FoodName Name { get; set; }
+    
     public FoodType FoodType { get; set; }
     
     #endregion
@@ -16,9 +19,10 @@ public class Ingredient
         FoodType = FoodType.Unknown;
     }
     
-    public Ingredient(FoodType foodType)
+    public Ingredient(FoodName foodName, FoodType foodType)
     {
-        FoodType = FoodType.Unknown;
+        Name = foodName;
+        FoodType = foodType;
     }
     
     #endregion

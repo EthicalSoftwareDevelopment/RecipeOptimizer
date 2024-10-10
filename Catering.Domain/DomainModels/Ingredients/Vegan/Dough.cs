@@ -1,6 +1,12 @@
-namespace Catering.Domain.DomainModels.Vegan;
+using Catering.Domain.DomainModels.Ingredients;
 
-public class Dough : Ingredient
+namespace Catering.Domain.DomainModels.Vegan
 {
-    
+    public class Dough : Ingredient
+    {
+        public Dough() : base(FoodName.Dough, FoodType.Gluten)
+        {
+
+        }
+    }
 }

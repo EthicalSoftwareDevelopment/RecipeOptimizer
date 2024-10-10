@@ -1,6 +1,13 @@
-namespace Catering.Domain.DomainModels.Vegan;
+using Catering.Domain.DomainModels.Ingredients;
 
-public class Cheese : Ingredient
+namespace Catering.Domain.DomainModels.NonVegan
 {
-    
+
+    public class Cheese : Ingredient
+    {
+        public Cheese() : base(FoodName.Cheese, FoodType.Dairy)
+        {
+
+        }
+    }
 }

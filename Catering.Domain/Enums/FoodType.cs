@@ -2,5 +2,10 @@ namespace Catering.Domain.DomainModels;
 
 public enum FoodType
 {
-    Vegetable, Fruit, Meat
+    Unknown, 
+    Vegetable, 
+    Fruit, 
+    Meat,
+    Dairy,
+    Gluten
 }

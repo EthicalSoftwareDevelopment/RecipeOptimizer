@@ -1,11 +1,12 @@
-namespace Catering.Domain.DomainModels;
-
-public enum FoodType
+namespace Catering.Domain.DomainModels.Enums
 {
-    Unknown, 
-    Vegetable, 
-    Fruit, 
-    Meat,
-    Dairy,
-    Gluten
+    public enum RecipeType
+    {
+        Burger, 
+        Pie,
+        Sandwhich, 
+        Pasta,
+        Salad, 
+        Pizza
+    }
 }
